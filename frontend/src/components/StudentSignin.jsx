@@ -1,9 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {
+  StudentSignInContainer,
+    FormContainer,
+    InputField,
+    SubmitButton
+} from '../styles/StudentSignInStyles'
+const StudentSignIn = () => {
 
-const StudentSignin = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSignIN = () => {
+        console.log('Student Signing In', {email,password})
+    }
   return (
-    <div>StudentSignin</div>
+    <StudentSignInContainer>
+        <h2>Student Sign In</h2>
+        <FormContainer>
+            <InputField 
+                type='email'
+                placeholder='Email'
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
+                required
+            />
+
+            <InputField 
+                type='password'
+                placeholder='Password'
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
+                required
+            />
+
+            <SubmitButton to='/student/dashboard' onClick={handleSignIN}>Sign In</SubmitButton>
+        </FormContainer>
+    </StudentSignInContainer>
   )
 }
 
-export default StudentSignin
+export default StudentSignIn

@@ -5,7 +5,6 @@ import {
     InputField,
     SubmitButton
 } from '../styles/AdminRegisterStyles'
-    import { Form } from 'react-router-dom'
 
 const AdminRegister = () => {
 
